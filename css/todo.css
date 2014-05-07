@@ -1,0 +1,15 @@
+/* Hello World App CSS */
+
+body {
+  width: 960px;
+  margin: auto;
+  
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 22px;
+}
