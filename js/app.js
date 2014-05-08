@@ -30,23 +30,24 @@
     // extract templates into own file
     taskTemplate: _.template( ' \
       <li> \
-        <input class="task-complete" type="checkbox" /> \
+        <input class="task-check" type="checkbox" /> \
         <%= task %> \
       </li> '
     ),
 
     events: {
       'click input#submit': 'addTask',
-      // select task selector, remove task
+      'click input.task-check': 'toggleTask'
     },
 
     models: {
-      newTask: "Feed the birds"
+      newTask: "First task of the day"
     },
 
     initialize: function () {
-      _.bindAll(this, 'render', 'addTask');
+      // _.bindAll(this, 'render', 'addTask');
       this.render();
+
     },
 
     render: function () {
@@ -60,10 +61,10 @@
       $('input#new-task').val(null); // resets the value of input box
     },
 
-    // completeTask: function () {
-    //   console.log(this);
-    //   this.parent().addClass('completed');
-    // }
+    toggleTask: function (event) {
+      // event.currentTarget.parent gets the specific li for a task
+      $(event.currentTarget).parent().toggleClass('completed');
+    }
 
   });
 
