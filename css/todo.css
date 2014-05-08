@@ -1,7 +1,9 @@
 /* Hello World App CSS */
+* { box-sizing: border-box; }
 
 body {
-  width: 960px;
+  width: 720px;
+  margin-top: 30px;
   margin: auto;
   
   font-family: 'Helvetica', sans-serif;
@@ -9,7 +11,38 @@ body {
   font-weight: 100;
 }
 
-h3 {
+h1, h2, h3, h4, h5, h6, p {
   font-weight: 100;
+}
+
+h6 {
   font-size: 22px;
+}
+
+#task-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid lightgrey;
+}
+
+#task-list {
+  list-style-type: none;
+}
+li {
+  margin-bottom: 5px;
+}
+
+li.completed {
+  text-decoration: line-through;
+}
+
+.inline-header {
+  display: inline-block;
+}
+
+.right {
+  float: right;
+}
+
+input {
+  padding: 4px 8px;
 }

@@ -3,13 +3,23 @@
 <html>
 
 <head>
-  <title>Hello World</title>
+  <title>Task List</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link type="text/css" rel="stylesheet" href="css/todo.css" />
 </head>
 
 <body>
+  <div id="task-header">
+    <h3 class="inline-header">To Do List</h3>
+  </div>
 
+  <div id="task-container">
+    <input id="new-task" type="text" placeholder="What needs to get done?" />
+    <input id="submit" type="submit"/>
+    
+    <ul id="task-list">
+    </ul>
+  </div>
   
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
