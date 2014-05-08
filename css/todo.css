@@ -21,7 +21,6 @@ h6 {
 
 /* Task Header */
 #task-header {
-  margin-bottom: 40px;
   border-bottom: 1px solid lightgrey;
 }
 .inline-header {
@@ -33,6 +32,17 @@ h6 {
 }
 
 /* Task container */
+#task-box {
+  width: 100%;
+  margin-bottom: 40px;
+  background: rgb(182, 223, 236);
+}
+
+#task-box p {
+  margin: 0;
+  padding: 10px;
+}
+
 #task-list {
   list-style-type: none;
 }

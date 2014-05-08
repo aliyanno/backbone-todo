@@ -26,6 +26,8 @@
   var AppBody = Backbone.View.extend({
     el: $('#task-container'),
     taskList: $('ul#task-list'),
+    taskBox: $('div#task-box'),
+
 
     // extract templates into own file
     taskTemplate: _.template( ' \
@@ -42,17 +44,20 @@
     },
 
     models: {
-      newTask: "First task of the day"
+      newTask: "First task of the day",
+      remainder: function () {
+        return $('#task-list li').length;
+      }
     },
 
     initialize: function () {
       // _.bindAll(this, 'render', 'addTask');
       this.render();
-
     },
 
     render: function () {
       $(this.taskList).append(this.taskTemplate({ task: this.models.newTask }));
+      $(this.taskBox).html('<p>' + this.models.remainder() + ' tasks remaining</p>');
       return this;
     },
 
