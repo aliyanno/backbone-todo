@@ -5,8 +5,7 @@
   // Controller for the header
   var AppHead = Backbone.View.extend({
     el: $('#task-header'), // Attaches the body to the backbone view
-
-    // make dat date purrty gurrrl
+    date: moment().format('dddd, MMMM Do YYYY'), // sets the date for today
 
     initialize: function () {
       _.bindAll(this, 'render');
@@ -14,7 +13,7 @@
     },
 
     render: function () {
-      $(this.el).append('<h3 class="inline-header right">' + new Date + '</h3>');
+      $(this.el).append('<h3 class="inline-header right">' + this.date + '</h3>');
       return this;
     },
 
