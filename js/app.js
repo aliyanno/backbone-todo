@@ -37,7 +37,8 @@
 
     events: {
       'click input#submit': 'addTask',
-      'click input.task-check': 'toggleTask'
+      'click input.task-check': 'toggleTask',
+      'click input#remove-complete': 'removeCompleted'
     },
 
     models: {
@@ -64,6 +65,10 @@
     toggleTask: function (event) {
       // event.currentTarget.parent gets the specific li for a task
       $(event.currentTarget).parent().toggleClass('completed');
+    },
+
+    removeCompleted: function () {
+      $('li.completed').hide();
     }
 
   });
