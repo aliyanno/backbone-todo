@@ -57,6 +57,11 @@
 
     render: function () {
       $(this.taskList).append(this.taskTemplate({ task: this.models.newTask }));
+      this.renderRemaining();
+      return this;
+    },
+
+    renderRemaining: function () {
       $(this.taskBox).html('<p>' + this.models.remainder() + ' tasks remaining</p>');
       return this;
     },
@@ -73,7 +78,8 @@
     },
 
     removeCompleted: function () {
-      $('li.completed').hide();
+      $('li.completed').remove();
+      this.renderRemaining();
     }
 
   });
